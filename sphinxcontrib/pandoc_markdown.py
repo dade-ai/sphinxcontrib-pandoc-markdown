@@ -237,15 +237,15 @@ def post_process(docs):
 
 
 class MarkdownParser(Parser):
-    FILTER_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "remove_caption_filter.py"))
+        FILTER_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "remove_caption_filter.py"))
 
-    PANDOC_OPT = [
-        "-f", "markdown+raw_html+markdown_in_html_blocks+autolink_bare_uris"
-              "+tex_math_single_backslash-implicit_figures",
-        "-t", "rst+raw_html-implicit_figures",
-        "--filter={}".format(FILTER_PATH),
-        "--tab-stop", "2",
-    ]
+        PANDOC_OPT = [
+            "-f", "markdown+raw_html+markdown_in_html_blocks+autolink_bare_uris+latex_macros"
+                  "+tex_math_single_backslash-implicit_figures",
+            "-t", "rst+raw_html-implicit_figures",
+            "--filter={}".format(FILTER_PATH),
+            "--tab-stop", "2",
+        ]
 
 
     @staticmethod
