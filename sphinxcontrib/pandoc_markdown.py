@@ -247,7 +247,6 @@ class MarkdownParser(Parser):
             "--tab-stop", "2",
         ]
 
-
     @staticmethod
     def to_json(input_string):
         output_string = None
